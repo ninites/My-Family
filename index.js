@@ -1,4 +1,4 @@
-const { port } = require("./config/mysql");
+require('dotenv').config()
 const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
@@ -33,6 +33,9 @@ app.use("/comments", comments);
 app.use("/family", family);
 app.use("/requetes", requetes);
 app.use(errorHandler);
+
+
+const port = process.env.DB_PORT || 8000;
 
 app.listen(port, () => {
   console.log("Server on" + port);

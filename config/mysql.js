@@ -13,6 +13,5 @@ const pool = mysql.createPool({
 
 const connection = pool.promise();
 
-const port = process.env.DB_PORT;
 
-module.exports = { connection, port };
+module.exports = { connection };
