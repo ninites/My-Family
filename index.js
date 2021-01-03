@@ -4,7 +4,7 @@ const helmet = require("helmet");
 const cors = require("cors");
 const app = express();
 const path = require("path");
-const port = process.env.DB_PORT || 8000;
+const port = process.env.PORT || 8000;
 
 const pics = require("./routes/pics");
 const users = require("./routes/users");
