@@ -6,9 +6,7 @@ const ApiError = require("../error/ApiError");
 const storage = multer.diskStorage({
   destination: (req, res, cb) => {
     let path = `uploads${req.path}`;
-    if (!fs.existsSync(path)) {
-      fs.mkdirSync(path);
-    }
+    fs.mkdirSync(path, { recursive: true });
     cb(null, path);
   },
   filename: function (req, file, cb) {
