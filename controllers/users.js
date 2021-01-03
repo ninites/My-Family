@@ -2,6 +2,8 @@ const model = require("../model/users");
 const rmodel = require("../model/requetes");
 const ApiError = require("../error/ApiError");
 const jwt = require("jsonwebtoken");
+const secretJWTKey =
+  "14cd677100bee8a7fa0d49829806fbab2f6b32647f4106a713d6c5ea521e314254e846553de456654d702f4131e229c3b9f73ee17972d66b502b626e7e1437b2";
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const validator = require("../error/validator");
@@ -88,7 +90,7 @@ class Users {
       next(ApiError.emptyBody("Probleme avec le body"));
     }
     const user = { login: req.body.login };
-    const token = jwt.sign(user, process.env.DB_JWT);
+    const token = jwt.sign(user, secretJWTKey);
     req.body.token = token;
     next();
   };
