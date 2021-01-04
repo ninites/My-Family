@@ -24,7 +24,7 @@ const cloudinaryUpload = async (req, res, next) => {
       return url;
     })
   );
-
+ 
   req.body.picsCloud = secureUrl;
 
   next();

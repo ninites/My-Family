@@ -69,7 +69,7 @@ class Users {
       username: username,
       login: login,
       password: hashPass,
-      profile: req.body.picsCloudUrl[0],
+      profile: req.body.picsCloud[0],
       date_creation: refDat,
     };
 
