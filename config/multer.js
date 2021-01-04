@@ -1,30 +1,12 @@
 const multer = require("multer");
-const path = require("path");
-const fs = require("fs");
 const ApiError = require("../error/ApiError");
 
-const storage = multer.diskStorage({
-  destination: (req, res, cb) => {
-    let path = `uploads${req.path}`;
-    fs.mkdirSync(path, { recursive: true });
-    cb(null, path);
-  },
-  filename: function (req, file, cb) {
-    cb(
-      null,
-      file.fieldname +
-        "-" +
-        Date.now() +
-        file.originalname.split("").slice(0, 2).join("") +
-        path.extname(file.originalname)
-    );
-  },
-});
+const storage = multer.memoryStorage();
 
 const upload = multer({
   storage: storage,
   limits: { fileSize: 3000000 },
-  fileFilter: (req, file, cb) => {
+  fileFilter: (req, file, cb) => {       
     const fileType = ["image/jpeg", "image/png"];
     if (!fileType.includes(file.mimetype)) {
       cb(ApiError.mysql("Mauvais type de fichier"));

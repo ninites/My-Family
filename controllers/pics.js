@@ -4,7 +4,6 @@ const fs = require("fs");
 
 class Pics {
   static postOne = async (req, res, next) => {
-    
     if (!Object.keys(req.body).length > 0) {
       next(ApiError.emptyBody("body problem"));
       return;
@@ -21,30 +20,22 @@ class Pics {
       return;
     }
 
-    const final = async () => {
-      return Promise.all(
-        req.files.map(async (file) => {
-          if (fs.existsSync(file.path)) {
-            const { title, desc, user_id, creation } = req.body;
-            const newPics = {
-              title: title,
-              desc: desc,
-              user_id: user_id,
-              path: file.path,
-              creation: creation,
-              private: req.body.private === "false" ? 0 : 1,
-            };
-            const result = await model.postPic(newPics);
-            if (typeof result === "string") {
-              return result;
-            }
-            return result;
-          }
-        })
-      );
-    };
+    req.files.forEach(async (file, index) => {
+      const { title, desc, user_id, creation } = req.body;
 
-    res.status(200).json(await final());
+      const newPics = {
+        title: title,
+        desc: desc,
+        user_id: user_id,
+        path: req.body.picsCloudUrl[index],
+        creation: creation,
+        private: req.body.private === "false" ? 0 : 1,
+      };    
+
+      const result = await model.postPic(newPics);
+    });
+
+    res.status(200).json("Photo ajoutée");
   };
 
   static getOne = async (req, res, next) => {
