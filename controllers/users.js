@@ -69,7 +69,7 @@ class Users {
       username: username,
       login: login,
       password: hashPass,
-      profile: req.file.path,
+      profile: req.body.picsCloudUrl[0],
       date_creation: refDat,
     };
 
@@ -82,6 +82,7 @@ class Users {
       next(ApiError.mysql(result));
       return;
     }
+
     res.status(200).send({ accessToken: req.body.token });
   };
 

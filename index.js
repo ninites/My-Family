@@ -15,7 +15,11 @@ const requetes = require("./routes/requetes");
 const errorHandler = require("./error/errorHandler");
 
 app.use(cors());
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+  })
+);
 app.use(express.json());
 
 app.use("/pics", pics);
@@ -26,12 +30,14 @@ app.use("/family", family);
 app.use("/requetes", requetes);
 app.use(errorHandler);
 
-app.use("/myfamily/", express.static(path.resolve(__dirname, "./public/build")));
+app.use(
+  "/myfamily/",
+  express.static(path.resolve(__dirname, "./public/build"))
+);
 
 app.get("/myfamily/*", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "build", "index.html"));
 });
-
 
 app.listen(port, () => {
   console.log("Server on" + port);

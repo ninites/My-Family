@@ -3,10 +3,17 @@ const users = express.Router({ strict: true });
 const upload = require("../config/multer");
 const authToken = require("../middlewares/authToken");
 const usCont = require("../controllers/users");
+const {cloudinaryUpload} = require("../middlewares/cloudinaryUpload");
 
 users.post("/signin/", usCont.userCheck, usCont.getToken, usCont.sendToken);
 users.get("/signin/", authToken, usCont.sendUser);
-users.post("/prof/", upload.single("image"), usCont.getToken, usCont.postOne);
+users.post(
+  "/prof/",
+  upload.single("image"),
+  cloudinaryUpload,
+  usCont.getToken,
+  usCont.postOne
+);
 users.get("/:id", usCont.getOne);
 users.get("/", usCont.getAll);
 users.delete("/:id", authToken, usCont.deleteUser);

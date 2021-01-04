@@ -1,6 +1,7 @@
 const model = require("../model/pics");
 const ApiError = require("../error/ApiError");
 const fs = require("fs");
+const { cloudinaryDelete } = require("../middlewares/cloudinaryUpload");
 
 class Pics {
   static postOne = async (req, res, next) => {
@@ -27,10 +28,11 @@ class Pics {
         title: title,
         desc: desc,
         user_id: user_id,
-        path: req.body.picsCloudUrl[index],
+        path: req.body.picsCloud[index].url,
         creation: creation,
+        cloudid: req.body.picsCloud[index].cloudId,
         private: req.body.private === "false" ? 0 : 1,
-      };    
+      };
 
       const result = await model.postPic(newPics);
     });
@@ -73,17 +75,9 @@ class Pics {
       return;
     }
 
-    const isExisting = await new Promise((resolve, reject) => {
-      fs.stat(getPath[0].path, (err, stats) => {
-        if (err) reject(err);
-        resolve(stats);
-      });
-    }).catch((err) => err.message);
-
-    if (typeof isExisting !== "string") {
-      fs.unlinkSync(getPath[0].path);
-    } else {
-      console.log("nexste pas");
+    const deleteOnCloud = await cloudinaryDelete(getPath[0].cloudId);
+    if (deleteOnCloud && deleteOnCloud.result !== "ok") {
+      console.log(deleteOnCloud);
     }
 
     const deletePicture = await model.deletePic(req.params.id);

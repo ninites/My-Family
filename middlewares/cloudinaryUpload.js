@@ -8,12 +8,16 @@ cloudinary.config({
 });
 
 const cloudinaryUpload = async (req, res, next) => {
+  const picsToStream = req.files || [req.file];
   const secureUrl = await Promise.all(
-    req.files.map(async (pic) => {
+    picsToStream.map(async (pic) => {
       const url = await new Promise((resolve, reject) => {
         streamifier.createReadStream(pic.buffer).pipe(
           cloudinary.uploader.upload_stream((err, result) => {
-            resolve(result.secure_url);
+            resolve({
+              url: result.secure_url,
+              cloudId: result.public_id,
+            });
           })
         );
       });
@@ -21,9 +25,19 @@ const cloudinaryUpload = async (req, res, next) => {
     })
   );
 
-  req.body.picsCloudUrl = secureUrl;
+  req.body.picsCloud = secureUrl;
 
   next();
 };
 
-module.exports = cloudinaryUpload;
+const cloudinaryDelete = async (publicId) => {
+  const deletePic = await new Promise((resolve, reject) => {
+    cloudinary.uploader.destroy(publicId, (err, result) => {
+      if (err) reject(err);
+      resolve(result);
+    });
+  }).catch((err) => err);
+  return deletePic;
+};
+
+module.exports = { cloudinaryUpload, cloudinaryDelete };

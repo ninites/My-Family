@@ -3,8 +3,7 @@ const pics = express.Router();
 const upload = require("../config/multer");
 const picsController = require("../controllers/pics");
 const authToken = require("../middlewares/authToken");
-const cloudinaryUpload = require("../middlewares/cloudinaryUpload");
-
+const { cloudinaryUpload } = require("../middlewares/cloudinaryUpload");
 
 pics.post(
   "/pic",
