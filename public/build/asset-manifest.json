@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/myfamily/static/css/main.a650f019.chunk.css",
-    "main.js": "/myfamily/static/js/main.34d206fb.chunk.js",
-    "main.js.map": "/myfamily/static/js/main.34d206fb.chunk.js.map",
-    "runtime-main.js": "/myfamily/static/js/runtime-main.d6134f24.js",
-    "runtime-main.js.map": "/myfamily/static/js/runtime-main.d6134f24.js.map",
+    "main.css": "/myfamily/static/css/main.35e3d0bc.chunk.css",
+    "main.js": "/myfamily/static/js/main.e14c4e23.chunk.js",
+    "main.js.map": "/myfamily/static/js/main.e14c4e23.chunk.js.map",
+    "runtime-main.js": "/myfamily/static/js/runtime-main.fca30ce2.js",
+    "runtime-main.js.map": "/myfamily/static/js/runtime-main.fca30ce2.js.map",
     "static/css/2.f912bae2.chunk.css": "/myfamily/static/css/2.f912bae2.chunk.css",
-    "static/js/2.4457c1e6.chunk.js": "/myfamily/static/js/2.4457c1e6.chunk.js",
-    "static/js/2.4457c1e6.chunk.js.map": "/myfamily/static/js/2.4457c1e6.chunk.js.map",
-    "static/js/3.8db756f4.chunk.js": "/myfamily/static/js/3.8db756f4.chunk.js",
-    "static/js/3.8db756f4.chunk.js.map": "/myfamily/static/js/3.8db756f4.chunk.js.map",
+    "static/js/2.6be36d0a.chunk.js": "/myfamily/static/js/2.6be36d0a.chunk.js",
+    "static/js/2.6be36d0a.chunk.js.map": "/myfamily/static/js/2.6be36d0a.chunk.js.map",
+    "static/js/3.798d1297.chunk.js": "/myfamily/static/js/3.798d1297.chunk.js",
+    "static/js/3.798d1297.chunk.js.map": "/myfamily/static/js/3.798d1297.chunk.js.map",
     "index.html": "/myfamily/index.html",
     "static/css/2.f912bae2.chunk.css.map": "/myfamily/static/css/2.f912bae2.chunk.css.map",
-    "static/css/main.a650f019.chunk.css.map": "/myfamily/static/css/main.a650f019.chunk.css.map",
-    "static/js/2.4457c1e6.chunk.js.LICENSE.txt": "/myfamily/static/js/2.4457c1e6.chunk.js.LICENSE.txt",
+    "static/css/main.35e3d0bc.chunk.css.map": "/myfamily/static/css/main.35e3d0bc.chunk.css.map",
+    "static/js/2.6be36d0a.chunk.js.LICENSE.txt": "/myfamily/static/js/2.6be36d0a.chunk.js.LICENSE.txt",
     "static/media/styles.css": "/myfamily/static/media/revicons.e8746a62.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.d6134f24.js",
+    "static/js/runtime-main.fca30ce2.js",
     "static/css/2.f912bae2.chunk.css",
-    "static/js/2.4457c1e6.chunk.js",
-    "static/css/main.a650f019.chunk.css",
-    "static/js/main.34d206fb.chunk.js"
+    "static/js/2.6be36d0a.chunk.js",
+    "static/css/main.35e3d0bc.chunk.css",
+    "static/js/main.e14c4e23.chunk.js"
   ]
 }
