@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/myfamily/static/css/main.646c3d68.chunk.css",
-    "main.js": "/myfamily/static/js/main.d1689d42.chunk.js",
-    "main.js.map": "/myfamily/static/js/main.d1689d42.chunk.js.map",
+    "main.css": "/myfamily/static/css/main.8a966b92.chunk.css",
+    "main.js": "/myfamily/static/js/main.a95590ab.chunk.js",
+    "main.js.map": "/myfamily/static/js/main.a95590ab.chunk.js.map",
     "runtime-main.js": "/myfamily/static/js/runtime-main.1b32b33c.js",
     "runtime-main.js.map": "/myfamily/static/js/runtime-main.1b32b33c.js.map",
     "static/css/2.f912bae2.chunk.css": "/myfamily/static/css/2.f912bae2.chunk.css",
@@ -12,7 +12,7 @@
     "static/js/3.28edbc36.chunk.js.map": "/myfamily/static/js/3.28edbc36.chunk.js.map",
     "index.html": "/myfamily/index.html",
     "static/css/2.f912bae2.chunk.css.map": "/myfamily/static/css/2.f912bae2.chunk.css.map",
-    "static/css/main.646c3d68.chunk.css.map": "/myfamily/static/css/main.646c3d68.chunk.css.map",
+    "static/css/main.8a966b92.chunk.css.map": "/myfamily/static/css/main.8a966b92.chunk.css.map",
     "static/js/2.ca8aa667.chunk.js.LICENSE.txt": "/myfamily/static/js/2.ca8aa667.chunk.js.LICENSE.txt",
     "static/media/styles.css": "/myfamily/static/media/revicons.e8746a62.woff"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.1b32b33c.js",
     "static/css/2.f912bae2.chunk.css",
     "static/js/2.ca8aa667.chunk.js",
-    "static/css/main.646c3d68.chunk.css",
-    "static/js/main.d1689d42.chunk.js"
+    "static/css/main.8a966b92.chunk.css",
+    "static/js/main.a95590ab.chunk.js"
   ]
 }
