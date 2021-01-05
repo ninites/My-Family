@@ -1,13 +1,9 @@
-# My family personnal project 
-### You can create or join a family and post photos that only your family can see
+# My family personnal project
+## [](https://github.com/romainheloise/My-Family#my-family)[My Family](https://myfamilyluvin.herokuapp.com/myfamily/)
+## You can create  or join your family and post souvenirs that you and your family only can see (if set to private :) )
+Made with :
+ - React  
+ - Nodejs/Express 
+ - Mysql
 
-# [My Family](https://myfamilyluvin.herokuapp.com/myfamily/)
-
-
-#made with React / Nodejs/Express Mysql 
-
-
-client repo here : https://github.com/romainheloise/My-family-client
-
-
-
+[React client repo](https://github.com/romainheloise/My-family-client)
