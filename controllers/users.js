@@ -37,6 +37,7 @@ class Users {
     if (!Object.keys(req.body).length > 0) {
       next(ApiError.emptyBody("Probleme avec le body"));
     }
+
     const { username, login, password, date_creation } = req.body;
     const refDat = date_creation.split("/").reverse().join("-");
 
@@ -83,7 +84,9 @@ class Users {
       return;
     }
 
-    res.status(200).send({ accessToken: req.body.token });
+    const returnUser = await model.getOne(result.insertId);
+
+    res.status(200).json(...returnUser);
   };
 
   static getToken = async (req, res, next) => {

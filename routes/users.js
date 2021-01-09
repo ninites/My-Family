@@ -10,8 +10,7 @@ users.get("/signin/", authToken, usCont.sendUser);
 users.post(
   "/prof/",
   upload.single("image"),
-  cloudinaryUpload,
-  usCont.getToken,
+  cloudinaryUpload,  
   usCont.postOne
 );
 users.get("/:id", usCont.getOne);
