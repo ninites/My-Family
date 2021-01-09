@@ -90,7 +90,7 @@ class Users {
     if (!Object.keys(req.body).length > 0) {
       next(ApiError.emptyBody("Probleme avec le body"));
     }
-    const user = { login: req.body.login };
+    const user = { id: req.body.userInfo.id };
     const token = jwt.sign(user, secretJWTKey);
     req.body.token = token;
     next();
@@ -108,12 +108,12 @@ class Users {
   };
 
   static sendUser = async (req, res, next) => {
-    const { login } = req.body.userInfo;
+    const { id } = req.body.userInfo;
     const users = await model.getAll();
-    let result = users.filter((user) => user.login === login);
+    let result = users.filter((user) => user.id === id);
 
     if (!result.length > 0) {
-      next(ApiError.notLogged("pasd'utilisateur avec ce mot de passe"));
+      next(ApiError.notLogged("pas d'utilisateur avec ce mot de passe"));
       return;
     }
 
